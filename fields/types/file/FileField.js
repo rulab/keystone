@@ -132,6 +132,7 @@ module.exports = Field.create({
 
 	renderFileNameAndChangeMessage () {
 		const href = this.props.value ? this.props.value.url : undefined;
+		console.log('href',this.props);
 		return (
 			<div>
 				{(this.hasFile() && !this.state.removeExisting) ? (

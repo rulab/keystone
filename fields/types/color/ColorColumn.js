@@ -22,7 +22,6 @@ var ColorColumn = React.createClass({
 			verticalAlign: 'middle',
 			width: 18,
 		};
-		console.log('props: ',this.props.col);
 		if (this.props.col.field.col.showText)
 			return (
 				<ItemsTableValue truncate={false} field={this.props.col.type}>
