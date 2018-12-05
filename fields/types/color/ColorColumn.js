@@ -7,6 +7,7 @@ var ColorColumn = React.createClass({
 	propTypes: {
 		col: React.PropTypes.object,
 		data: React.PropTypes.object,
+		showText: React.PropTypes.bool,
 	},
 	renderValue () {
 		const value = this.props.data.fields[this.props.col.path];
@@ -21,15 +22,24 @@ var ColorColumn = React.createClass({
 			verticalAlign: 'middle',
 			width: 18,
 		};
-
-		return (
-			<ItemsTableValue truncate={false} field={this.props.col.type}>
-				<div style={{ lineHeight: '18px' }}>
-					<span style={colorBoxStyle} />
-					<span style={{ display: 'inline-block', verticalAlign: 'middle' }}>{value}</span>
-				</div>
-			</ItemsTableValue>
-		);
+		console.log('props: ',this.props.col);
+		if (this.props.col.field.col.showText)
+			return (
+				<ItemsTableValue truncate={false} field={this.props.col.type}>
+			<div style={{ lineHeight: '18px' }}>
+	<span style={colorBoxStyle} />
+		<span style={{ display: 'inline-block', verticalAlign: 'middle' }}>{value}</span>
+		</div>
+		</ItemsTableValue>
+			)
+		else
+			return(
+				<ItemsTableValue truncate={false} field={this.props.col.type}>
+			<div style={{ lineHeight: '18px' }}>
+	<span style={colorBoxStyle} />
+		</div>
+		</ItemsTableValue>
+			);
 	},
 	render () {
 		return (
