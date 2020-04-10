@@ -44,9 +44,9 @@ name.prototype.addToSchema = function (schema) {
 
 	schema.virtual(paths.full).get(function () {
 		if (this.get(paths.middle) === undefined)
-			return this.get(paths.first)+' '+this.get(paths.last));
+			return this.get(paths.first)+' '+this.get(paths.last);
 		else
-			return this.get(paths.first)+' '+this.get(paths.middle)+' '+this.get(paths.last));
+			return this.get(paths.first)+' '+this.get(paths.middle)+' '+this.get(paths.last);
 	});
 
 	schema.virtual(paths.full).set(function (value) {
